@@ -1,0 +1,151 @@
+1.git stash
+--Saved working directory and index state WIP on Samplebranch: b74df8e Third commit
+
+2.git stash pop
+--On branch Samplebranch
+Your branch is ahead of 'origin/Samplebranch' by 3 commits.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   samplefile.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Dropped refs/stash@{0} (127c1be34c74e6d86696286686b4cd9040a18e55)
+
+3.git stash drop
+--Dropped refs/stash@{0} (f585a6f9dadd6b30638871a41c859197215fbe3b)
+
+4.git stash apply
+--On branch Samplebranch
+Your branch is ahead of 'origin/Samplebranch' by 3 commits.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   samplefile.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+
+5.git pull
+--remote: Enumerating objects: 7, done.
+remote: Counting objects: 100% (7/7), done.
+remote: Compressing objects: 100% (5/5), done.
+remote: Total 5 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (5/5), 1.66 KiB | 154.00 KiB/s, done.
+From https://github.com/Anjankumar18/samplegit
+   c0aafd0..03afbf7  master     -> origin/master
+Updating c0aafd0..03afbf7
+Fast-forward
+ README.md      | 13 +++++++++++++
+ samplefile.txt |  2 +-
+ 2 files changed, 14 insertions(+), 1 deletion(-)
+ create mode 100644 README.md
+
+6.git rebase <branch name>
+--Current branch master is up to date.
+Successfully rebased and updated refs/heads/master.
+
+7.git pull
+--Enumerating objects: 19, done.
+Counting objects: 100% (18/18), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (10/10), done.
+Writing objects: 100% (15/15), 1.52 KiB | 779.00 KiB/s, done.
+Total 15 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), done.
+To https://github.com/Anjankumar18/samplegit.git
+   03afbf7..46c2beb  master -> master
+
+8.git reflog-records the tips of branches and other references updated in local repository
+
+--46c2beb (HEAD -> master, origin/master) HEAD@{0}: pull: Merge made by the 'ort' strategy.
+4c43b09 HEAD@{1}: rebase (finish): returning to refs/heads/master
+4c43b09 HEAD@{2}: rebase (pick): Create README.md
+6351d69 (Samplebranch) HEAD@{3}: rebase (start): checkout Samplebranch
+03afbf7 HEAD@{4}: pull: Fast-forward
+c0aafd0 HEAD@{5}: checkout: moving from Samplebranch to master
+6351d69 (Samplebranch) HEAD@{6}: commit: committing
+b74df8e HEAD@{7}: reset: moving to HEAD
+b74df8e HEAD@{8}: reset: moving to HEAD
+b74df8e HEAD@{9}: reset: moving to HEAD
+b74df8e HEAD@{10}: reset: moving to HEAD
+b74df8e HEAD@{11}: reset: moving to HEAD
+b74df8e HEAD@{12}: commit: Third commit
+368e345 HEAD@{13}: commit: second commit in branch
+ceb735f HEAD@{14}: commit: samplefile.txt
+20876ee (origin/Samplebranch) HEAD@{15}: checkout: moving from Samplebranch to Samplebranch
+20876ee (origin/Samplebranch) HEAD@{16}: checkout: moving from master to Samplebranch
+c0aafd0 HEAD@{17}: checkout: moving from Samplebranch to master
+20876ee (origin/Samplebranch) HEAD@{18}: commit: branch1 commit
+c0aafd0 HEAD@{19}: checkout: moving from master to Samplebranch
+c0aafd0 HEAD@{20}: commit (initial): Demo Commit
+
+9.git log- shows the history of everything that ids done in local repository
+--commit 46c2beb218f0258cf05cd8baea45e47edcdf771a (HEAD -> master, origin/master)
+Merge: 4c43b09 03afbf7
+Author: Anjankumar18 <akp.akp2014@gmail.com>
+Date:   Thu Nov 3 14:09:22 2022 +0530
+
+    Merge branch 'master' of https://github.com/Anjankumar18/samplegit
+
+commit 4c43b091252f985196f77df38e15d21d778c012b
+Author: Anjankumar18 <117276221+Anjankumar18@users.noreply.github.com>
+Date:   Thu Nov 3 12:36:45 2022 +0530
+
+    Create README.md
+
+commit 6351d695617c8b10d3722cc1b1e45c275a03be61 (Samplebranch)
+Author: Anjankumar18 <akp.akp2014@gmail.com>
+Date:   Thu Nov 3 13:41:00 2022 +0530
+
+    committing
+
+commit b74df8e48b6b2508989aa03d14f249f93395f536
+Author: Anjankumar18 <akp.akp2014@gmail.com>
+Date:   Thu Nov 3 13:23:20 2022 +0530
+
+    Third commit
+
+commit 368e34557d15bf972ae14711d5d3789db76c7f57
+Author: Anjankumar18 <akp.akp2014@gmail.com>
+Date:   Thu Nov 3 13:21:45 2022 +0530
+
+    second commit in branch
+
+commit ceb735f22e62e7fdd363621fa591313450644ea3
+Author: Anjankumar18 <akp.akp2014@gmail.com>
+Date:   Thu Nov 3 13:19:31 2022 +0530
+
+    samplefile.txt
+
+commit 03afbf781fe30368800a715204039f33f0b25955
+Merge: c829f21 20876ee
+Author: Anjankumar18 <117276221+Anjankumar18@users.noreply.github.com>
+Date:   Thu Nov 3 13:00:39 2022 +0530
+
+    Merge pull request #1 from Anjankumar18/Samplebranch
+
+    branch1 commit
+
+commit 20876eea14f722fbd17f6382327b7fcb00aa31a6 (origin/Samplebranch)
+Author: Anjankumar18 <akp.akp2014@gmail.com>
+Date:   Thu Nov 3 12:52:00 2022 +0530
+
+    branch1 commit
+
+commit c829f211549e101823ed7f33e11ac3b65338da55
+Author: Anjankumar18 <117276221+Anjankumar18@users.noreply.github.com>
+Date:   Thu Nov 3 12:36:45 2022 +0530
+
+    Create README.md
+
+commit c0aafd0aae7e98e3a9379bf5fd27eb935d04f244
+Author: Anjankumar18 <akp.akp2014@gmail.com>
+Date:   Thu Nov 3 12:11:06 2022 +0530
+
+    Demo Commit
+(END)
